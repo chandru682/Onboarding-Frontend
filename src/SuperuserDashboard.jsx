@@ -21,10 +21,10 @@ function SuperuserDashboard() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const isLoggedIn = localStorage.getItem("hrLoggedIn");
+        const isLoggedIn = localStorage.getItem("superuserLoggedIn");
 
         if (!isLoggedIn) {
-            navigate("/hr-login");
+            navigate("/superuser-login");
         }
     }, [navigate]);
     const viewEmployee = (id) => {
