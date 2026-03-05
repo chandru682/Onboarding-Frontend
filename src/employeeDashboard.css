@@ -1,0 +1,152 @@
+/* ================= MAIN PAGE ================= */
+
+.employee-dashboard-container {
+  padding: 40px;
+  background: #f4f6f9;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= EMPLOYEE DETAILS BOX ================= */
+
+.employee-details {
+  background: #ffffff;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+/* Main Title */
+.employee-details h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+/* Section Titles */
+.employee-details h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  background: #eaeaea;
+  padding: 6px 10px;
+  border: 1px solid #000;
+}
+
+/* ================= TABLE STYLE ================= */
+
+.employee-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.employee-details table th,
+.employee-details table td {
+  border: 1px solid #000;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.employee-details table th {
+  width: 30%;
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+/* ================= SUB BOX STYLE ================= */
+
+.sub-box {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* ================= DOCUMENT LINKS ================= */
+
+.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.doc-link {
+  padding: 6px 10px;
+  border: 1px solid #000;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+.doc-link:hover {
+  background: #f2f2f2;
+}
+
+/* ================= BUTTON STYLE ================= */
+
+.dashboard-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.logout-btn {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  background: #e74c3c;
+  color: white;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* ================= A4 PRINT SETUP ================= */
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide everything except print section */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-section,
+  #print-section * {
+    visibility: visible;
+  }
+
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm;
+    box-sizing: border-box;
+  }
+
+  .dashboard-actions {
+    display: none;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  h3 {
+    page-break-after: avoid;
+  }
+}

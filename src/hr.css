@@ -1,0 +1,275 @@
+/* ================= MAIN PAGE ================= */
+
+.hr-container {
+  padding: 40px;
+  background: #f4f6f9;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.company-logo {
+  height: 60px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+
+
+/* ================= EMPLOYEE LIST SECTION ================= */
+
+.employee-list {
+  margin-top: 30px;
+}
+
+/* Section Title */
+.employee-list h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f3c88;
+  border-left: 5px solid #1f3c88;
+  padding-left: 10px;
+}
+
+/* ================= EMPLOYEE CARD ================= */
+
+.employee-card {
+  background: #ffffff;
+  padding: 18px 25px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  border: 1px solid #e6e6e6;
+}
+
+/* Hover Effect */
+.employee-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Employee Name */
+.employee-card strong {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Email */
+.employee-card p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ================= BUTTON GROUP ================= */
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* View Button */
+.btn-group button {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+/* View Button Style */
+.btn-group button:first-child {
+  background-color: #1f3c88;
+  color: #ffffff;
+}
+
+.btn-group button:first-child:hover {
+  background-color: #162d66;
+}
+
+/* Download Button */
+.download-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.download-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* ================= EMPTY MESSAGE ================= */
+
+.employee-list p {
+  color: #999;
+  font-size: 15px;
+  padding: 10px;
+}
+/* ================= EMPLOYEE DETAILS PRINT STYLE ================= */
+
+.employee-details {
+  background: #ffffff;
+  padding: 30px;
+  margin-top: 30px;
+  /* border: 1px solid #000; */
+}
+
+/* Main Title */
+.employee-details h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  /* border-bottom: 2px solid #000; */
+  padding-bottom: 8px;
+}
+
+/* Section Titles */
+.employee-details h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  background: #eaeaea;
+  padding: 6px 10px;
+  border: 1px solid #000;
+}
+
+/* ================= TABLE STYLE ================= */
+
+.employee-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.employee-details table th,
+.employee-details table td {
+  border: 1px solid #000;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.employee-details table th {
+  width: 30%;
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+/* ================= SUB BOX STYLE ================= */
+
+.sub-box {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* ================= DOCUMENT LINKS ================= */
+
+.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.doc-link {
+  padding: 6px 10px;
+  border: 1px solid #000;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* ================= BUTTON STYLE ================= */
+
+.print-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.print-btn,
+.close-btn {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.print-btn {
+  background: #1f3c88;
+  color: white;
+}
+
+.close-btn {
+  background: #777;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ================= PRINT MODE ================= */
+/* ================= A4 PRINT SETUP ================= */
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+   .company-logo {
+    display: block !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide everything except print section */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-section, 
+  #print-section * {
+    visibility: visible;
+  }
+
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm;        /* A4 width */
+    min-height: 297mm;   /* A4 height */
+    padding: 10mm;
+    box-sizing: border-box;
+  }
+
+  .print-actions {
+    display: none;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  h3 {
+    page-break-after: avoid;
+  }
+}
