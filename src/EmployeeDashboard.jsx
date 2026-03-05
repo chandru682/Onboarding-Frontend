@@ -15,7 +15,7 @@ function EmployeeDashboard() {
       return;
     }
 
-    fetch(`http://127.0.0.1:8000/employee-full/${employeeId}`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-full/${employeeId}`)
       .then(res => res.json())
       .then(data => {
         setEmployeeData(data);
@@ -160,7 +160,7 @@ function EmployeeDashboard() {
           <b>{label}:</b>{" "}
           {file ? (
             <a
-              href={`http://127.0.0.1:8000/uploads/${file}`}
+              href={`${process.env.REACT_APP_API_BASE_URL}/uploads/${file}`}
               target="_blank"
               rel="noreferrer"
             >

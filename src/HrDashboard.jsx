@@ -10,7 +10,7 @@ function HrDashboard() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/employees")
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/employees`)
             .then(res => res.json())
             .then(data => setEmployees(data))
             .catch(err => console.log(err));
@@ -29,7 +29,7 @@ function HrDashboard() {
     }, [navigate]);
     const viewEmployee = (id) => {
         setLoading(true);
-        fetch(`http://127.0.0.1:8000/employee-full/${id}`)
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-full/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedEmployee(data);
@@ -43,7 +43,7 @@ function HrDashboard() {
 
     const handleExcelDownload = (id) => {
         window.open(
-      `http://127.0.0.1:8000/download-employee-excel/${selectedEmployee.employee.id}`,
+      `${process.env.REACT_APP_API_BASE_URL}/download-employee-excel/${selectedEmployee.employee.id}`,
       "_blank"
     )
     };
@@ -73,7 +73,7 @@ function HrDashboard() {
                                 </button>
 
                                 <a
-                                    href={`http://127.0.0.1:8000/download-employee/${emp.id}`}
+                                    href={`${process.env.REACT_APP_API_BASE_URL}/download-employee/${emp.id}`}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -389,7 +389,7 @@ function HrDashboard() {
                                         <td>
                                             {dep.photo && (
                                                 <a
-                                                    href={`http://127.0.0.1:8000/uploads/${dep.photo}`}
+                                                    href={`${process.env.REACT_APP_API_BASE_URL}/uploads/${dep.photo}`}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
@@ -398,7 +398,7 @@ function HrDashboard() {
                                             )}{" "}
                                             {dep.aadhar_photo && (
                                                 <a
-                                                    href={`http://127.0.0.1:8000/uploads/${dep.aadhar_photo}`}
+                                                    href={`${process.env.REACT_APP_API_BASE_URL}/uploads/${dep.aadhar_photo}`}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
@@ -407,7 +407,7 @@ function HrDashboard() {
                                             )}{" "}
                                             {dep.pan_photo && (
                                                 <a
-                                                    href={`http://127.0.0.1:8000/uploads/${dep.pan_photo}`}
+                                                    href={`${process.env.REACT_APP_API_BASE_URL}/uploads/${dep.pan_photo}`}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
@@ -441,7 +441,7 @@ function HrDashboard() {
                                     <td>
                                         {file ? (
                                             <a
-                                                href={`http://127.0.0.1:8000/uploads/${file}`}
+                                                href={`${process.env.REACT_APP_API_BASE_URL}/uploads/${file}`}
                                                 target="_blank"
                                                 rel="noreferrer"
                                                 className="view-btn"

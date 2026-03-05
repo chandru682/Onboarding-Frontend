@@ -143,7 +143,7 @@ dependents.forEach((dep, index) => {
   }
 });
 
-    await fetch("http://127.0.0.1:8000/employee-joining", {
+    await fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-joining`, {
       method: "POST",
       body: submitData,
     });

@@ -12,7 +12,7 @@ function EmployeeLogin() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/employee-login", {
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
