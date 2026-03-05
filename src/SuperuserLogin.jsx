@@ -26,7 +26,7 @@ function SuperUserLogin() {
 
   return (
     <div className="login-container">
-      <h2>HR Login</h2>
+      <h2>Super User Login</h2>
 
       <form onSubmit={handleLogin}>
         <input
