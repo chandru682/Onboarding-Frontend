@@ -61,52 +61,48 @@ function EmployeeLogin() {
 
         <button type="submit">Login</button>
       </form>
-
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
-        <button
-          style={{
-            margin: "5px",
-            padding: "10px 20px",
-            backgroundColor: "#0b1d61",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer"
-          }}
-          onClick={() => navigate("/hr-login")}
-        >
-          HR Login
-        </button>
-        <button
-          style={{
-            margin: "5px",
-            padding: "10px 20px",
-            backgroundColor: "#0b1d61",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer"
-          }}
-          onClick={() => navigate("/manager-login")}
-        >
-          Manager Login
-        </button>
-        <button
-          style={{
-            margin: "5px",
-            padding: "10px 20px",
-            backgroundColor: "#0b1d61",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer"
-          }}
-          onClick={() => navigate("/superuser-login")}
-        >
-          Superuser Login
-        </button>
-      </div>
-
+{email === "hrlogin" && (
+  <p 
+    style={{
+      marginTop: "20px",
+      fontSize: "14px",
+      cursor: "pointer",
+      color: "#0b1d61",
+      textAlign: "center"
+    }}
+    onClick={() => navigate("/hr-login")}
+  >
+    HR Login ?
+  </p>
+)}
+{email === "managerlogin" && (
+  <p 
+    style={{
+      marginTop: "20px",
+      fontSize: "14px",
+      cursor: "pointer",
+      color: "#0b1d61",
+      textAlign: "center"
+    }}
+    onClick={() => navigate("/manager-login")}
+  >
+    Manager Login ?
+  </p>
+)}
+{email === "superuserlogin" && (
+  <p 
+    style={{
+      marginTop: "20px",
+      fontSize: "14px",
+      cursor: "pointer",
+      color: "#0b1d61",
+      textAlign: "center"
+    }}
+    onClick={() => navigate("/superuser-login")}
+  >
+    Superuser Login ?
+  </p>
+)}
       <p style={{ marginTop: "10px" }}>
         Don't have account?{" "}
         <span
