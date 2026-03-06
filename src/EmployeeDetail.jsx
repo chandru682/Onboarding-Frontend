@@ -143,12 +143,22 @@ dependents.forEach((dep, index) => {
   }
 });
 
-    await fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-joining`, {
-      method: "POST",
-      body: submitData,
-    });
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/employee-joining`, {
+        method: "POST",
+        body: submitData,
+      });
 
-    alert("Employee Submitted Successfully");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      alert("Employee Submitted Successfully");
+    } catch (error) {
+      console.error("Error submitting employee data:", error);
+      alert(`Failed to submit employee data: ${error.message}`);
+    }
   };
 
   return (
